@@ -14,11 +14,12 @@
     />
   </head>
   <body>
+    <div class="fs-1 fw-bold text-bg-primary text-center">LIST</div>
     <div class="container">
       <table class="table">
         <thead>
           <tr>
-            <th class="fs-2">list</th>
+            <th class="fs-2">/board/list</th>
             <td></td>
             <td></td>
             <td></td>
@@ -66,7 +67,7 @@
         </tbody>
       </table>
       <div class="text-end">
-        <a href="/board/form" class="btn btn-primary">글쓰기</a>
+        <a href="/board/form" class="btn btn-outline-primary">글쓰기</a>
       </div>
     </div>
   </body>

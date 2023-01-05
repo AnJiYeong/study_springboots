@@ -14,12 +14,13 @@
     />
   </head>
   <body>
+    <div class="fs-1 fw-bold text-bg-info bg-opacity-75 text-center">FORM</div>
     <div class="container">
       <form action="" method="post">
         <table class="table">
           <thead>
             <tr>
-              <th class="fs-2">form</th>
+              <th class="fs-2">/board/form</th>
               <td></td>
             </tr>
           </thead>
@@ -27,7 +28,13 @@
             <tr>
               <th>title</th>
               <td>
-                <input class="form-control" type="text" name="title" id="" />
+                <input
+                  class="form-control"
+                  type="text"
+                  name="title"
+                  id=""
+                  value="제목"
+                />
               </td>
             </tr>
             <tr>
@@ -40,7 +47,9 @@
                     id=""
                     cols="30"
                     rows="10"
-                  ></textarea>
+                  >
+내용</textarea
+                  >
                 </div>
               </td>
             </tr>
@@ -60,7 +69,7 @@
           </tbody>
         </table>
         <div class="text-end">
-          <button class="btn btn-primary" type="submit">등록</button>
+          <button class="btn btn-info fw-bold" type="submit">등록</button>
         </div>
       </form>
     </div>

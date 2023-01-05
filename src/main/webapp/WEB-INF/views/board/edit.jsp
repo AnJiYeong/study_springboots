@@ -14,13 +14,15 @@
     />
   </head>
   <body>
+    <div class="fs-1 fw-bold text-bg-danger text-center">EDIT</div>
     <div class="container">
       <form action="/board/list" method="post">
         <table class="table">
           <thead>
             <tr>
-              <th class="fs-2">edit</th>
+              <th class="fs-2">/board/edit</th>
             </tr>
+            <td></td>
           </thead>
           <tbody>
             <tr>
@@ -67,7 +69,9 @@
           </tbody>
         </table>
         <div class="text-end">
-          <button class="btn btn-primary" type="submit">수정완료</button>
+          <button class="btn btn-outline-danger fw-bold" type="submit">
+            수정완료
+          </button>
         </div>
       </form>
     </div>
