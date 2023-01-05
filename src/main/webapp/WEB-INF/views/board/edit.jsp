@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,12 +15,11 @@
   </head>
   <body>
     <div class="container">
-      <form action="" method="post">
+      <form action="/board/list" method="post">
         <table class="table">
           <thead>
             <tr>
-              <th class="fs-2">form</th>
-              <td></td>
+              <th class="fs-2">edit</th>
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@
           </tbody>
         </table>
         <div class="text-end">
-          <button class="btn btn-primary" type="submit">등록</button>
+          <button class="btn btn-primary" type="submit">수정완료</button>
         </div>
       </form>
     </div>

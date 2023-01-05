@@ -15,4 +15,19 @@ public class BoardController {
         // insert biz
         return "/WEB-INF/views/board/list.jsp";
     }
+    @RequestMapping(value = {"/board", "/board/list"})
+    public String list() {
+        // insert biz
+        return "/WEB-INF/views/board/list.jsp";
+    }
+    @RequestMapping("/board/view")
+    public String view() {
+        // insert biz
+        return "/WEB-INF/views/board/view.jsp";
+    }
+    @RequestMapping("/board/edit")
+    public String edit() {
+        // insert biz
+        return "/WEB-INF/views/board/edit.jsp";
+    }
 }
