@@ -13,13 +13,15 @@
     />
   </head>
   <body>
+    <div class="fs-1 fw-bold text-bg-danger text-center">EDIT</div>
     <div class="container">
       <form action="/board/list" method="post">
         <table class="table">
           <thead>
             <tr>
-              <th class="fs-2">edit</th>
+              <th class="fs-2">/board/edit</th>
             </tr>
+            <td></td>
           </thead>
           <tbody>
             <tr>
@@ -50,10 +52,25 @@
                 </div>
               </td>
             </tr>
+            <tr>
+              <th>userName</th>
+              <td>
+                <input class="form-control" type="text" name="userName" id="" />
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th>date</th>
+              <td>
+                <input class="form-control" type="text" name="date" id="" />
+              </td>
+            </tr>
           </tbody>
         </table>
         <div class="text-end">
-          <button class="btn btn-primary" type="submit">저장</button>
+          <button class="btn btn-outline-danger fw-bold" type="submit">
+            수정완료
+          </button>
         </div>
       </form>
     </div>

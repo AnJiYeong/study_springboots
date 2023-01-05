@@ -57,7 +57,6 @@
                 <input class="form-control" type="text" name="date" id="" />
               </td>
             </tr>
-            <tr></tr>
           </tbody>
         </table>
         <div class="text-end">

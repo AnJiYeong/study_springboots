@@ -51,6 +51,19 @@
                 </div>
               </td>
             </tr>
+            <tr>
+              <th>userName</th>
+              <td>
+                <input class="form-control" type="text" name="userName" id="" />
+              </td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <th>date</th>
+              <td>
+                <input class="form-control" type="text" name="date" id="" />
+              </td>
+            </tr>
           </tbody>
         </table>
         <div class="text-end">
