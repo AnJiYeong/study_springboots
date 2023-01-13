@@ -17,9 +17,23 @@ public class BoardController {
         // insert biz
         return "/WEB-INF/views/board/list.jsp";
     }
-<<<<<<< HEAD
-    */
     
+    @RequestMapping(value = {"/board", "/board/list"})
+    public String list() {
+        // insert biz
+        return "/WEB-INF/views/board/list.jsp";
+    }
+    @RequestMapping("/board/view")
+    public String view() {
+        // insert biz
+        return "/WEB-INF/views/board/view.jsp";
+    }
+    @RequestMapping("/board/edit")
+    public String edit() {
+        // insert biz
+        return "/WEB-INF/views/board/edit.jsp";
+    }
+    */
 
     // @RequestMapping(value = "/board/form", method = RequestMethod.GET)
     public String form() {
@@ -38,21 +52,5 @@ public class BoardController {
         modelAndView.setViewName("/board/temp");
         // insert biz
         return modelAndView;
-=======
-    @RequestMapping(value = {"/board", "/board/list"})
-    public String list() {
-        // insert biz
-        return "/WEB-INF/views/board/list.jsp";
-    }
-    @RequestMapping("/board/view")
-    public String view() {
-        // insert biz
-        return "/WEB-INF/views/board/view.jsp";
-    }
-    @RequestMapping("/board/edit")
-    public String edit() {
-        // insert biz
-        return "/WEB-INF/views/board/edit.jsp";
->>>>>>> 46c6b77d4de1b8f4eff1622314f673a84fd0549d
     }
 }
