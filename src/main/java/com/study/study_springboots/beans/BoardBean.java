@@ -10,8 +10,8 @@ public class BoardBean {    // vo, dao, dto
 		return this.title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public String setTitle(String string) {
+		return this.title = string;
 	}
 
 	public String getContent() {
@@ -37,6 +37,9 @@ public class BoardBean {    // vo, dao, dto
 	public void setDate(String date) {
 		this.date = date;
 	}
+
+    public void setTitle(BoardBean boardBean) {
+    }
 
     
         

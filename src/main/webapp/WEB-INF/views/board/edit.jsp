@@ -16,7 +16,7 @@
   <body>
     <div class="fs-1 fw-bold text-bg-danger text-center">EDIT</div>
     <div class="container">
-      <form action="/board/list" method="post">
+      <form action="/board/save" method="post">
         <table class="table">
           <thead>
             <tr>

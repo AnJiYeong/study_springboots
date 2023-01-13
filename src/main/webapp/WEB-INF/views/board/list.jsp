@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%@ taglib
+prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +16,7 @@
     />
   </head>
   <body>
-    <div class="fs-1 fw-bold text-bg-primary text-center">LIST</div>
+  <div class="fs-1 fw-bold text-bg-primary text-center">LIST</div>
     <div class="container">
       <table class="table">
         <thead>
@@ -32,38 +34,23 @@
           </tr>
         </thead>
         <tbody>
+        <c:forEach var="board" items="${boardList}" varStatus="status">
           <tr>
             <td>
               <a
-                href="/board/view"
+                href="/board/view?title=${board.title}"
                 class="text-dark fw-bold"
                 style="text-decoration: none"
-                >슬기를 떠난 진영, 틈을 노리는 종우 | 솔로지옥2</a
+                >${board.title}</a
               >
             </td>
             <td>
-              민수와 함께 천국도에 간 진영. 그사이 종우는 슬기의 마음을 얻으려
-              노력한다.
+              ${board.content}
             </td>
-            <td>Netflix Korea</td>
+            <td>${board.userName}</td>
             <td>2023.01.04</td>
           </tr>
-          <tr>
-            <td>
-              <a
-                href="/board/view"
-                class="text-dark fw-bold"
-                style="text-decoration: none"
-                >[최초공개] LE SSERAFIM(르세라핌) - ANTIFRAGILE</a
-              >
-            </td>
-            <td>
-              #르세라핌 #르세라핌컴백쇼 #LESSERAFIMCOMEBACKSHOW #LESSERAFIM
-              #ANTIFRAGILE
-            </td>
-            <td>Mnet M2 (엠투)</td>
-            <td>2022.10.17</td>
-          </tr>
+          </c:forEach>
         </tbody>
       </table>
       <div class="text-end">

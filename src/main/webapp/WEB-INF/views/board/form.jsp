@@ -16,7 +16,7 @@
   <body>
     <div class="fs-1 fw-bold text-bg-info bg-opacity-75 text-center">FORM</div>
     <div class="container">
-      <form action="" method="post">
+      <form action="/board/save" method="post">
         <table class="table">
           <thead>
             <tr>

@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%@ taglib
+prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,31 +24,40 @@
           </tr>
         </thead>
         <tbody>
+        <c:forEach var="board" items="${boardList}" varStatus="statue">
+          <c:set var="boardTitle" value="request.getAttribute('title')" />
+          <c:if test="${board.title eq boardTitle}">
           <tr>
-            <td class="fs-5">Netflix Korea</td>
+            <td class="fs-5">${board.userName}</td>
           </tr>
           <tr>
             <th class="fs-4">
-              [넷플릭스] 슬기를 떠난 진영, 틈을 노리는 종우 | 솔로지옥2
+              ${board.title}
             </th>
           </tr>
           <tr>
             <td>
-              민수와 함께 천국도에 간 진영. 그사이 종우는 슬기의 마음을 얻으려
-              노력한다.
+              ${board.content}
             </td>
           </tr>
           <tr>
             <td>2023.01.04</td>
           </tr>
+          </c:if>
+        </c:forEach>
         </tbody>
       </table>
-      <div class="d-flex justify-content-between">
-        <div class="item">
-          <a href="/board/list" class="btn btn-outline-dark fw-bold">뒤로</a>
-        </div>
-        <div class="item">
-          <a href="/board/edit" class="btn btn-warning fw-bold">수정</a>
+        <div class="d-flex justify-content-between">
+            <div class="item">
+                <form action="/board/list">
+                    <button class="btn btn-outline-dark fw-bold">뒤로</button>
+                </form>
+            </div>
+            <div class="item">
+                <form action="/board/edit" method="post">
+                    <button class="btn btn-warning fw-bold">수정</button>
+                </form>
+            </div>
         </div>
       </div>
     </div>

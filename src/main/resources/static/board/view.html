@@ -43,10 +43,14 @@
       </table>
       <div class="d-flex justify-content-between">
         <div class="item">
-          <a href="/board/list" class="btn btn-outline-dark fw-bold">뒤로</a>
+          <form action="/board/list">
+            <button class="btn btn-outline-dark fw-bold">뒤로</button>
+          </form>
         </div>
         <div class="item">
-          <a href="/board/edit" class="btn btn-warning fw-bold">수정</a>
+          <form action="/board/edit" method="post">
+            <button class="btn btn-warning fw-bold">수정</button>
+          </form>
         </div>
       </div>
     </div>

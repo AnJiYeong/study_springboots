@@ -1,5 +1,6 @@
 package com.study.study_springboots.service;
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -66,6 +67,19 @@ public class DataInfors {
         boardBean.setUserName("@twitter");
         membersList.add(boardBean);
         return membersList;
+    }
+
+    public BoardBean getDataWithBoardBean(String title){
+        DataInfors dataInfors = new DataInfors();
+        ArrayList<BoardBean> boardBeans = dataInfors.getDataListWithBoardBean();
+        BoardBean boardBean = new BoardBean();
+        for(int i = 0; i < boardBeans.size(); i++) {
+            if(boardBeans.get(i).getTitle().equals(title)) {
+                boardBean.setTitle(boardBeans.get(i));
+                boardBean.setContent(boardBeans.get(i));
+            }
+        }
+        return boardBean;
     }
     
 }
