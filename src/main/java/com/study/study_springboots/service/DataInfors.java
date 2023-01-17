@@ -76,7 +76,7 @@ public class DataInfors {
         for(int i = 0; i < boardBeans.size(); i++) {
             if(boardBeans.get(i).getTitle().equals(title)) {
                 boardBean.setTitle(boardBeans.get(i));
-                boardBean.setContent(boardBeans.get(i));
+               // boardBean.setContent(boardBeans.get(i));
             }
         }
         return boardBean;
