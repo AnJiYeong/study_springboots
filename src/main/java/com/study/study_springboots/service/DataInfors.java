@@ -4,8 +4,11 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.springframework.stereotype.Service;
+
 import com.study.study_springboots.beans.BoardBean;
 
+@Service
 public class DataInfors {
     public HashMap<String, String> getSearchFormData() {
         HashMap<String, String> searchForm = new HashMap<String, String>();
@@ -76,7 +79,7 @@ public class DataInfors {
         for(int i = 0; i < boardBeans.size(); i++) {
             if(boardBeans.get(i).getTitle().equals(title)) {
                 boardBean.setTitle(boardBeans.get(i));
-               // boardBean.setContent(boardBeans.get(i));
+                // boardBean.setContent(boardBeans.get(i));
             }
         }
         return boardBean;

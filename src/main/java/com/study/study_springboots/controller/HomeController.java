@@ -1,10 +1,17 @@
 package com.study.study_springboots.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.study.study_springboots.dao.HomeDao;
+
 @Controller
 public class HomeController {
+
+    @Autowired
+    HomeDao homeDao;
+    
     @RequestMapping(value = {"", "/", "/main"})    // http://localhost:8080/homejsp
     public String main(){
         int i = 0;
@@ -12,6 +19,7 @@ public class HomeController {
     }
     @RequestMapping(value = "/home")    // http://localhost:8080/homejsp
     public void home(){
+        Object result = homeDao.getList();
         int i = 0;
     }
     @RequestMapping(value = "/homejsp")    // http://localhost:8080/homejsp
@@ -26,35 +34,7 @@ public class HomeController {
     }
     @RequestMapping(value = "/jstlformats")
     public String jstlformats(){
-        int i = 0;
         return "jstl_formats";
     }
     
 }
-
-/*
- @Controller
-public class HomeController {
-    @RequestMapping(value = {"", "/", "/main"}) // http://localhost:8080/home
-    public String main(){
-        int i = 0;
-        return "/WEB-INF/views/main.jsp";
-    }
-    @RequestMapping(value = "/home") // http://localhost:8080/home
-    public void home(){
-        int i = 0;
-    }
-    @RequestMapping(value = "/homejsp") // http://localhost:8080/homejsp
-    public String homejsp(){
-        int i = 0;
-        return "/WEB-INF/views/home.jsp";
-    }
-    @RequestMapping(value = "/homehtml") // http://localhost:8080/homehtml
-    public String homehtml(){
-        int i = 0;
-        return "/WEB-INF/views/home.html";
-    }
-   
-}
- */
-
