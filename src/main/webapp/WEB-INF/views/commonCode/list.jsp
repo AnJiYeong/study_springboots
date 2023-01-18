@@ -21,7 +21,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="fs-2">/board/list</th>
+            <th class="fs-2">/commonCode/list</th>
             <td></td>
             <td></td>
           </tr>
