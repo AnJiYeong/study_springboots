@@ -9,4 +9,4 @@
         from ANSWERS
         where QUESTIONS_UID = #{QUESTION_UID}
     </select>
-</mapper>
+</mapper> 

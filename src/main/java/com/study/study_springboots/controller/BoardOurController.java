@@ -32,7 +32,7 @@ public class BoardOurController {
     public ModelAndView edit(ModelAndView modelAndView) {
         modelAndView.setViewName("board_our/edit");
         return modelAndView;
-    }
+    } 
     @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)  
     public ModelAndView list() {
         ModelAndView modelAndView = new ModelAndView();
