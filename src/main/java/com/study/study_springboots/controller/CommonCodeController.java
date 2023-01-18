@@ -26,12 +26,14 @@ public class CommonCodeController {
 
         modelAndView.setViewName("commonCode/list");
 
+        /*
         for(int i = 0; i < list.size(); i++) {
             Map item = list.get(i);
             System.out.println(item.get("COMMON_CODE_ID"));
             System.out.println(item.get("NAME"));
             System.out.println(item.get("ORDER_NUMBER"));
         }
+         */
 
         return modelAndView;
     }
