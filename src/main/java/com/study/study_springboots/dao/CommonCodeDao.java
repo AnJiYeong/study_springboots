@@ -13,9 +13,9 @@ import org.springframework.stereotype.Repository;
 public class CommonCodeDao {
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
-
+ 
     public Object getList() {
-        String statement = "CommonCode.selectFromCIP_COMMON_CODEByCOMMON_CODE_ID";
+        String statement = "CommonCode.selectFromCIP_COMMON_CODE";
         Map parameter = new HashMap();
         parameter.put("COMMON_CODE_ID", "No");
         Object resultset = sqlSessionTemplate.selectList(statement, parameter);
