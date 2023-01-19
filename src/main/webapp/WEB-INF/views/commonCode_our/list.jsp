@@ -5,6 +5,10 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
 <div class="container">
+<form action="/commonCodeOur/form/${resultData.COMMON_CODE_ID}" method="get">
+						<button class="btn outline-info"
+							>Form</button>
+					</form>
 <table class="table table-striped table-hover table-bordered">
 	<thead>
 		<tr class="text-center">
@@ -37,10 +41,11 @@
 				</td>
 				<td>
 					<form action="/commonCodeOur/delete/${resultData.COMMON_CODE_ID}" method="post">
-						<button class="btn btn-outline-info"
-							>${resultData.COMMON_CODE_ID}</button>
+						<button class="btn outline-info"
+							>Delete</button>
 					</form>
 				</td>
+
 			</tr>
 		</c:forEach>
 	</tbody>
