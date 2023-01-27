@@ -7,6 +7,9 @@
         parameterType="Map" resultType="Map">
         SELECT * 
         FROM CIP_COMMON_CODE
+        <![CDATA[ 
+        where ORDER_NUMBER >  0
+        ]]>
     </select>
 
     <!-- call CommonCodeOur.selectByUID -->
@@ -18,44 +21,58 @@
     </select>
 
     <!-- call CommonCodeOur.updateByUID -->
-    <update id="updateByUID" 
-        parameterType="Map">
-        UPDATE CIP_COMMON_CODE
-        SET NAME=#{NAME},
+    <update id="updateByUID" parameterType="Map">
+        UPDATE CIP_COMMON_CODE 
+        SET NAME=#{NAME}, 
             MODIFY_DATE=sysdate()
         WHERE COMMON_CODE_ID = #{COMMON_CODE_ID}
     </update>
 
     <!-- call CommonCodeOur.deleteByUID -->
-    <delete id="deleteByUID" 
-        parameterType="Map">
+    <delete id="deleteByUID" parameterType="Map">
         DELETE FROM CIP_COMMON_CODE
         WHERE COMMON_CODE_ID = #{COMMON_CODE_ID}
     </delete>
 
-    <!-- call CommonCodeOur.insertByUID -->
+    <!-- call CommonCodeOur.deleteMultiByUIDs -->
+    <delete id="deleteMultiByUIDs" parameterType="Map">
+        DELETE FROM CIP_COMMON_CODE
+        WHERE COMMON_CODE_ID IN 
+            <foreach collection="deleteMultis" item="item" 
+                open="(" separator="," close=")">
+                #{item}
+            <!-- 'No', 'System_Code_YN' -->
+            </foreach>
+    </delete>
+
+    <!-- call CommonCodeOur.insertWithUID -->
     <insert id="insertWithUID" parameterType="Map">
-    insert into CIP_COMMON_CODE
-        (COMMON_CODE_ID,NAME,ORDER_NUMBER,ATTRIBUTION_1,ATTRIBUTION_2,DESCRIPTION,
-        SYSTEM_CODE_YN,USE_YN,PARENT_COMMON_CODE_ID,REGISTER_SEQ,REGISTRY_DATE,MODIFIER_SEQ,MODIFY_DATE)
-    VALUE(#{COMMON_CODE_ID},#{NAME},#{ORDER_NUMBER},NULL,NULL,#{DESCRIPTION}
-        <choose>
-            <when test="SYSTEM_CODE_YN != null">
-                ,'Yes'
-            </when>
-            <otherwise>
-                , 'No'
-            </otherwise>
-        </choose>
-        <choose>
-            <when test="USE_YN != null">
-                ,'Yes'
-            </when>
-            <otherwise>
-                , 'No'
-            </otherwise>
-        </choose>
-        ,'Yes'
-        ,NULL,'',sysdate(),'UUID-1111-1111111',sysdate())
+        insert into CIP_COMMON_CODE 
+            (COMMON_CODE_ID,NAME,ORDER_NUMBER,ATTRIBUTION_1,ATTRIBUTION_2,DESCRIPTION,
+            SYSTEM_CODE_YN,USE_YN,PARENT_COMMON_CODE_ID,REGISTER_SEQ,REGISTRY_DATE,MODIFY_DATE,MODIFIER_SEQ) 
+        VALUE 
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{COMMON_CODE_ID},#{NAME},#{ORDER_NUMBER},NULL,NULL,#{DESCRIPTION}
+            <choose>
+                <when test="SYSTEM_CODE_YN != null">
+                    , 'Yes'
+                </when>
+                <otherwise>
+                    ,'No'
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="USE_YN != null">
+                    , 'Yes'
+                </when>
+                <otherwise>
+                    ,'No'
+                </otherwise>
+            </choose>
+            ,NULL,#{REGISTER_SEQ},sysdate(),sysdate(),
+            <if test="MODIFIER_SEQ != null">
+            #{MODIFIER_SEQ},
+            </if>
+        </trim>
     </insert>
 </mapper>
