@@ -24,7 +24,7 @@ public class Paginations {
         this.setBlockRange();
     }
 
-    	// 전체 페이지 블록 갯수 계산
+    // 전체 페이지 블록 갯수 계산
 	public void setTotalBlock() {
 		totalBlock = (int) Math.ceil(totalPage / blockScale);
 	}
@@ -49,6 +49,7 @@ public class Paginations {
 			nextPage = totalPage;
 		}
 	}
+    
     public void setPageRange(){
         pageBegin = (this.currentPage - 1) * this.pageScale + 1;
         pageEnd = this.pageBegin + pageScale - 1;
