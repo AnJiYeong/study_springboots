@@ -5,33 +5,38 @@
       src="https://www.gstatic.com/charts/loader.js"
     ></script>
     <script type="text/javascript">
-      google.charts.load("current", { packages: ["corechart"] });
-      google.charts.setOnLoadCallback(drawChart);
+          google.charts.load('current', { 'packages': ['corechart'] });
+          google.charts.setOnLoadCallback(drawChart);
 
+          let dataArray = ${dataArray};
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ["Age", "Weight"],
-          [8, 12],
-          [4, 5.5],
-          [11, 14],
-          [4, 5],
-          [3, 3.5],
-          [6.5, 7],
-        ]);
 
-        var options = {
-          title: "Age vs. Weight comparison",
-          hAxis: { title: "Age", minValue: 0, maxValue: 15 },
-          vAxis: { title: "Weight", minValue: 0, maxValue: 15 },
-          legend: "none",
-        };
+              // var data = google.visualization.arrayToDataTable([
+              //     ['Age', 'Weight'],
+              //     [8, 12],
+              //     [4, 5.5],
+              //     [11, 14],
+              //     [4, 5],
+              //     [3, 3.5],
+              //     [6.5, 7]
+              // ]);
 
-        var chart = new google.visualization.ScatterChart(
-          document.getElementById("chart_div")
-        );
+              var data = google.visualization.arrayToDataTable(dataArray);
+              let target_element = document.getElementById('chart_div');
+              let height = target_element.parentElement.clientHeight;
+              var options = {
+                  title: 'Age vs. Weight comparison',
+                  height: height,
+                  hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
+                  vAxis: { title: 'Weight', minValue: 0, maxValue: 15 },
+                  legend: 'none'  // 범례
+              };
 
-        chart.draw(data, options);
-      }
+              var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+              chart.draw(data, options);
+          }
+          window.addEventListener("resize", drawChart, false)
     </script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -49,6 +54,7 @@
       }
     </style>
   </head>
+
   <body>
     <div class="container">
       <div class="row vh-50">
@@ -56,7 +62,8 @@
         <div class="col-7">Aside left</div>
       </div>
     </div>
-    <!-- <div id="chart_div" style="width: 500px; height: 300px"></div> -->
+
+    <!-- <div id="chart_div" style="width: 500px; height: 300px;"></div> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
